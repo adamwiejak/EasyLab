@@ -1,0 +1,12 @@
+.factors {
+  flex-grow: 1;
+  display: grid;
+  gap: 2rem;
+}
+
+.container {
+  display: grid;
+  grid-auto-flow: column;
+  place-items: center;
+  gap: 0.65em;
+}

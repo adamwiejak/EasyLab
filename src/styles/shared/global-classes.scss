@@ -1,0 +1,54 @@
+.hoverUp {
+  transition: all 0.2s !important;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.03) translateY(-0.2em);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.box {
+  gap: 0.2em;
+  padding: 0.2em;
+  display: grid;
+  overflow: hidden;
+  font-size: inherit;
+
+  &--center {
+    @extend .box;
+    place-self: center;
+    place-content: center;
+    place-items: center;
+  }
+
+  &--column {
+    @extend .box;
+    grid-auto-flow: column;
+  }
+}
+
+.colapsed {
+  gap: 0;
+  opacity: 0;
+  margin: 0;
+  height: 0;
+  padding: 0;
+  box-shadow: none;
+  border: none;
+  pointer-events: none;
+}
+
+.ellipsisText {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+// .glassMorphed {
+// backdrop-filter: brightness(0.75) blur(5px);
+// border-color: ${({ theme: { palette } }) => palette.divider};
+// }

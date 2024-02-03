@@ -1,0 +1,16 @@
+@use "../../../styles/shared/global-classes.scss";
+
+.root {
+  display: grid;
+  position: relative;
+  height: 100vh;
+  background-color: var(--color-dark-1);
+  grid-template-rows: min-content 1fr;
+  overflow: hidden;
+}
+
+.content {
+  max-height: 100%;
+  padding: 1em 0;
+  overflow-y: auto;
+}
