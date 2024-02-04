@@ -9,16 +9,20 @@ const RouteError: React.FC<CardProps> = (props) => {
 
   return (
     <styled.CardBox {...rest}>
-      <styled.Header>{`Error status #${status} - ${statusText}`}</styled.Header>
-      <styled.Paragraph>Somethink went wrong. {error.message}</styled.Paragraph>
+      <styled.Header variant="h5">{`Error status #${status} - ${statusText}`}</styled.Header>
+
+      <styled.Paragraph>
+        Somethink went wrong :
+        <styled.Paragraph color="error">{error?.message}</styled.Paragraph>
+      </styled.Paragraph>
 
       <styled.Actions>
-        <Link to=".." relative="route">
-          <ButtonStandard variant="outlined" text="Back" />
+        <Link to="../">
+          <ButtonStandard fullWidth variant="outlined" text="Back" />
         </Link>
 
         <Link to="/">
-          <ButtonStandard variant="outlined" text="Home" />
+          <ButtonStandard fullWidth variant="outlined" text="Home" />
         </Link>
       </styled.Actions>
     </styled.CardBox>

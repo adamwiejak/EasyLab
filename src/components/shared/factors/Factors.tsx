@@ -1,43 +1,19 @@
-import styles from "./factors.module.scss";
-import { Box, Toolbar, Typography } from "@mui/material";
-import Select from "../../primitives/Select";
-import {
-  massStandardsDensity,
-  thermalExpansionCoefficients,
-} from "../../../data/matherials";
-import { useState } from "react";
+import styles from "./styles.module.scss";
+import { Card, CardProps, Typography } from "@mui/material";
 
-const Factors = () => {
-  const [state, setState] = useState<any>(massStandardsDensity.stal);
-  const [state2, setState2] = useState<any>(thermalExpansionCoefficients.DURAN);
+interface IFactors extends CardProps {}
 
-  const onChange = (e: any) => setState(e.target.value);
-  const onChange2 = (e: any) => setState2(e.target.value);
+const Factors: React.FC<IFactors> = (props) => {
+  const { ...rest } = props;
 
   return (
-    <Toolbar className={styles["factors"]}>
-      <Box className={styles["container"]}>
-        <Select
-          value={state}
-          onChange={onChange}
-          options={massStandardsDensity}
-        />
-        <Typography variant="h6">Gęstość Wzorca Masy</Typography>
-        {state && <Typography>{state.toFixed(2)} [g/cm3]</Typography>}
-      </Box>
-
-      <Box className={styles["container"]}>
-        <Select
-          value={state2}
-          onChange={onChange2}
-          options={thermalExpansionCoefficients}
-        />
-        <Typography variant="h6">
-          Współczynnik Rozszerzalności Cieplnej
-        </Typography>
-        {state2 && <Typography>{state2} [1/C]</Typography>}
-      </Box>
-    </Toolbar>
+    <Card {...rest} className={styles["container"]}>
+      <Typography>Typ: Kolba Miarowa</Typography>
+      <Typography>Objętość: 500 ml</Typography>
+      <Typography>Współczynnik Z: 1.0002</Typography>
+      <Typography>Błąd Systematyczny: 69 ml</Typography>
+      <Typography>Błąd Przypadkowy: Nie dotyczy</Typography>
+    </Card>
   );
 };
 

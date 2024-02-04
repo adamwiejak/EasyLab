@@ -4,7 +4,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 
-interface ImageButton {
+export interface IImageButton {
   height?: number | string;
   imageSrc: string;
   text: string;
@@ -12,12 +12,13 @@ interface ImageButton {
   alt?: string;
 }
 
-const ImageButton: React.FC<ImageButton> = (props) => {
+const ImageButton: React.FC<IImageButton> = (props) => {
   const { imageSrc, alt, header, text, height, ...rest } = props;
 
   return (
     <Card
       sx={{
+        height: "100%",
         filter: "brightness(0.65)",
         transition: "all 0.15s ease-in-out",
         "&:hover": {

@@ -1,0 +1,15 @@
+.container {
+  display: grid;
+  height: 100%;
+  padding: 0.2em;
+  gap: 0.2em;
+  grid-template-rows: min-content 1fr;
+}
+
+.calculator {
+  display: grid;
+  height: 100%;
+  padding: 0.2em;
+  gap: 0.2em;
+  grid-template-columns: 1fr max-content;
+}

@@ -1,4 +1,5 @@
 import no_found from "./404.svg";
+import back from "./back.png";
 import background from "./background.jpg";
 import glass from "./glass.jpg";
 import pipettes from "./pipetes.jpeg";
@@ -14,6 +15,7 @@ import glassPipetesSingly from "./glass-pipete-singly.jpg";
 
 export {
   no_found,
+  back,
   background,
   glass,
   pipettes,

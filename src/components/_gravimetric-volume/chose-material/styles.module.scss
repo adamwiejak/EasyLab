@@ -1,12 +1,18 @@
-.factors {
+.tollbar {
   flex-grow: 1;
   display: grid;
   gap: 2rem;
 }
 
-.container {
+.box {
   display: grid;
   grid-auto-flow: column;
   place-items: center;
   gap: 0.65em;
+}
+
+.header {
+}
+
+.unit {
 }

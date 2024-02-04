@@ -1,21 +1,16 @@
 @use "../../../styles/shared/global-classes.scss";
 
-.root {
-  height: 100vh;
-  background-color: var(--color-dark-1);
-  grid-template-rows: min-content 1fr;
-  overflow: hidden;
-}
-
 .background {
   position: absolute;
   inset: 0;
+  z-index: -1;
+  background-color: var(--color-dark-1);
 
   img {
     position: absolute;
     width: 100%;
     height: 100%;
-    opacity: 0.35;
-    filter: blur(3px) brightness(0.45);
+    opacity: 0.2;
+    filter: blur(5px) brightness(0.5);
   }
 }

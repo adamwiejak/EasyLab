@@ -12,7 +12,11 @@ const Button: React.FC<ButtondProps> = (props) => {
   const { text, inProgress, disabled, ...rest } = props;
 
   return (
-    <MUIButton {...rest} disabled={disabled || inProgress}>
+    <MUIButton
+      sx={{ textTransform: "none" }}
+      {...rest}
+      disabled={disabled || inProgress}
+    >
       {props.text}
       {props.inProgress && <CircularProgress sx={{ position: "absolute" }} />}
     </MUIButton>

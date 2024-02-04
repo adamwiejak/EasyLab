@@ -1,13 +1,13 @@
-import GridContainer from "../../layout/grid-container/GridContainer";
 import { Link } from "react-router-dom";
+import GridContainer from "../../layout/grid-container/GridContainer";
 import ImageButton from "../../primitives/ImageButton";
-import { automaticPipetes } from "../../../assets/assets";
+import { proceduresAsset } from "../../../assets/procedures";
 
-const LiquidHandling = () => {
+const Landing = () => {
   return (
     <GridContainer>
-      {automaticPipetes.map(({ header, text, href, imageSrc }) => (
-        <Link to={`/calculate/${href}`} key={header}>
+      {proceduresAsset.map(({ header, text, href, imageSrc }) => (
+        <Link to={href} key={header}>
           <ImageButton
             height={250}
             imageSrc={imageSrc}
@@ -20,4 +20,4 @@ const LiquidHandling = () => {
   );
 };
 
-export default LiquidHandling;
+export default Landing;

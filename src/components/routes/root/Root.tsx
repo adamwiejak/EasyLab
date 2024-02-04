@@ -8,7 +8,7 @@ import { background } from "../../../assets/images/_images";
 const Root: React.FC = () => {
   return (
     <Box className={styles["root"]}>
-      <AppBar position="relative" />
+      <AppBar position="static" />
 
       <Container className={styles["content"]}>
         <Background src={background} />

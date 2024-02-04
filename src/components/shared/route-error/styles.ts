@@ -15,7 +15,7 @@ const CardBox = styled(Paper)`
 CardBox.defaultProps = { elevation: 24 };
 
 const Header = styled(Typography)`
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: 0.1em;
   text-align: center;
 `;
