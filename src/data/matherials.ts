@@ -7,4 +7,5 @@ export const thermalExpansionCoefficients = {
 
 export const massStandardsDensity = {
   stal: 8.0,
+  glina: 1.0,
 };

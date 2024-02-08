@@ -1,43 +1,57 @@
 import styles from "./styles.module.scss";
-import { Box, Toolbar, Typography } from "@mui/material";
+import { Box, SelectChangeEvent, Typography } from "@mui/material";
 import Select from "../../primitives/Select";
-import {
-  massStandardsDensity,
-  thermalExpansionCoefficients,
-} from "../../../data/matherials";
-import { useState } from "react";
+import * as matherials from "../../../data/matherials";
+import { useAppDispatch, useAppSelector } from "../../../store/Store";
+import { gravimetricVolume } from "../../../store/gravimetric-volume-slice/slice";
 
 const ChoseMatherials = () => {
-  const [state, setState] = useState<any>(massStandardsDensity.stal);
-  const [state2, setState2] = useState<any>(thermalExpansionCoefficients.DURAN);
+  const dispatch = useAppDispatch();
 
-  const onChange = (e: any) => setState(e.target.value);
-  const onChange2 = (e: any) => setState2(e.target.value);
+  const { massStandardDensity, thermalExpansionCoefficient } = useAppSelector(
+    (store) => store.gravimetricVolume
+  );
 
+  const onChange = () => {};
+
+  const onThermalExpansionCoefficientChange = (
+    e: SelectChangeEvent<unknown>
+  ) => {
+    const value = e.target.value as number;
+    dispatch(gravimetricVolume.setThermalExpansionCoefficient(value));
+  };
   return (
-    <Toolbar className={styles["tollbar"]}>
+    <Box className={styles["tollbar"]}>
       <Box className={styles["box"]}>
+        <Typography>
+          Gęstość Wzorca Masy
+          <span>{` ${massStandardDensity.value} [${massStandardDensity.unit}]`}</span>
+        </Typography>
+
         <Select
-          value={state}
+          size="small"
           onChange={onChange}
-          options={massStandardsDensity}
+          value={massStandardDensity.value}
+          options={matherials.massStandardsDensity}
         />
-        <Typography variant="h6">Gęstość Wzorca Masy</Typography>
-        {state && <Typography>{state.toFixed(2)} [g/cm3]</Typography>}
       </Box>
 
       <Box className={styles["box"]}>
-        <Select
-          value={state2}
-          onChange={onChange2}
-          options={thermalExpansionCoefficients}
-        />
-        <Typography variant="h6">
+        <Typography>
           Współczynnik Rozszerzalności Cieplnej
+          <span>{` ${thermalExpansionCoefficient.value.toExponential()} [${
+            thermalExpansionCoefficient.unit
+          }]`}</span>
         </Typography>
-        {state2 && <Typography>{state2} [1/C]</Typography>}
+
+        <Select
+          size="small"
+          value={thermalExpansionCoefficient.value}
+          onChange={onThermalExpansionCoefficientChange}
+          options={matherials.thermalExpansionCoefficients}
+        />
       </Box>
-    </Toolbar>
+    </Box>
   );
 };
 

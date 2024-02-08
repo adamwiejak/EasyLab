@@ -29,7 +29,6 @@ export const glassAndPlasticVesselsAsset: VesselAsset[] = [
     text: "Cylindry Miarowe",
     imageSrc: images.cylinders,
   },
-
   {
     vesselType: "glass_multi_pipete",
     header: "Pipety Wielomiarowe",

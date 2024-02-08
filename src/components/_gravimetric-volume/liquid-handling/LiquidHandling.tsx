@@ -1,6 +1,6 @@
 import GridContainer from "../../layout/grid-container/GridContainer";
 import { Link } from "react-router-dom";
-import ImageButton from "../../primitives/ImageButton";
+import ImageButton from "../../shared/card-button/ImageButton";
 import { liquidHandlingVesselsAsset } from "../../../assets/gravimetic-volume";
 
 const backBtn = { text: "Cofnij do Wyboru Typu Nacznia" };

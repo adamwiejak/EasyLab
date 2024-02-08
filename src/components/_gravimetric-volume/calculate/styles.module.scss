@@ -1,15 +1,22 @@
-.container {
+.calculate {
   display: grid;
   height: 100%;
   padding: 0.2em;
   gap: 0.2em;
   grid-template-rows: min-content 1fr;
-}
+  min-height: 65vh;
+  min-width: 50vw;
 
-.calculator {
-  display: grid;
-  height: 100%;
-  padding: 0.2em;
-  gap: 0.2em;
-  grid-template-columns: 1fr max-content;
+  &__header {
+  }
+
+  &__main {
+  }
+
+  &__footer {
+    display: grid;
+    z-index: 20;
+    padding: 0.3em;
+    grid-auto-flow: column;
+  }
 }

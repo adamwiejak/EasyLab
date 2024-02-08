@@ -1,5 +1,5 @@
-import styles from "./styles.module.scss";
-import { ButtonGroup, Card, CardProps } from "@mui/material";
+import * as styled from "./styled";
+import { CardProps } from "@mui/material";
 import Button from "../../primitives/Button";
 import { vesselsErrors } from "../../../data/vol-errors";
 import { VesselType } from "../../../types";
@@ -16,20 +16,18 @@ const ChoseVolume: React.FC<ChoseVolume> = (props) => {
   const volumes = Object.keys(vesselsErrors[vesselType]).map((vol) => +vol);
 
   return (
-    <Card {...rest} className={styles["container"]}>
-      <ButtonGroup variant="outlined" aria-label="outlined button group">
-        {volumes.map((volume) => (
-          <Button
-            key={volume}
-            size="large"
-            text={`${volume.toString()} ml`}
-            onClick={() => onChangeVolume(volume)}
-            color={currVolume === volume ? "secondary" : "primary"}
-            variant={currVolume === volume ? "contained" : "outlined"}
-          />
-        ))}
-      </ButtonGroup>
-    </Card>
+    <styled.Container {...rest}>
+      {volumes.map((volume) => (
+        <Button
+          key={volume}
+          size="large"
+          text={`${volume.toString()}`}
+          onClick={() => onChangeVolume(volume)}
+          color={currVolume === volume ? "secondary" : "primary"}
+          variant={currVolume === volume ? "contained" : "outlined"}
+        />
+      ))}
+    </styled.Container>
   );
 };
 

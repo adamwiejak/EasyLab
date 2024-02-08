@@ -12,6 +12,7 @@ import cylinders from "./cylinders.jpg";
 import glassPipetes from "./glass-pipetes.jpg";
 import glassPipetesMulti from "./glass-pipete-multi.jpg";
 import glassPipetesSingly from "./glass-pipete-singly.jpg";
+import registration from "./registration.jpeg";
 
 export {
   no_found,
@@ -28,4 +29,5 @@ export {
   glassPipetesMulti,
   glassPipetesSingly,
   electrical_pipettes,
+  registration,
 };

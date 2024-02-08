@@ -1,11 +1,13 @@
-import { vesselsErrors } from "../data/vol-errors";
-import { VesselType } from "../types";
+export {};
 
-export const getVesselErrorsValue = (
-  vesselType: VesselType,
-  volume: number
-) => {
-  const { unit, vol, repPercent } = vesselsErrors[vesselType][volume];
+// import { vesselsErrors } from "../data/vol-errors";
+// import { VesselType } from "../types";
 
-  const error = typeof vol === "number" ? vol.toFixed(4) : 0;
-};
+// export const getVesselErrorsValue = (
+//   vesselType: VesselType,
+//   volume: number
+// ) => {
+//   const { unit, vol, repPercent } = vesselsErrors[vesselType][volume];
+
+//   const error = typeof vol === "number" ? vol.toFixed(4) : 0;
+// };

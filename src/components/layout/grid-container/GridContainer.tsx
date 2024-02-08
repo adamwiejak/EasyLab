@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 import styles from "./styles.module.scss";
+import { Link } from "react-router-dom";
 import { Box, BoxProps } from "@mui/material";
-import ImageButton from "../../primitives/ImageButton";
+import ImageButton from "../../shared/card-button/ImageButton";
 import { back } from "../../../assets/images/_images";
 
 interface GridContainerProps extends BoxProps {
@@ -17,7 +17,6 @@ const GridContainer: React.FC<GridContainerProps> = (props) => {
       {backBtn && (
         <Link to="../">
           <ImageButton
-            height={250}
             imageSrc={backBtn.src || back}
             text={backBtn.text || "Cofnij"}
             header={backBtn.header || "Cofnij"}

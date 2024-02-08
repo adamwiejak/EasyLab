@@ -1,4 +1,4 @@
-import { IImageButton } from "./components/primitives/ImageButton";
+import { IImageButton } from "./components/shared/card-button/ImageButton";
 import { vesselsErrors } from "./data/vol-errors";
 
 export type VesselType = keyof typeof vesselsErrors;
@@ -15,4 +15,5 @@ export interface VesselErrors {
   unit: "ml" | "µl";
   vol: number | MultiPipeteError;
   repPercent?: number;
+  volPercent?: number;
 }

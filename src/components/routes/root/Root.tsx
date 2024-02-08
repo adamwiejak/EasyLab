@@ -9,9 +9,9 @@ const Root: React.FC = () => {
   return (
     <Box className={styles["root"]}>
       <AppBar position="static" />
+      <Background src={background} />
 
       <Container className={styles["content"]}>
-        <Background src={background} />
         <Outlet />
       </Container>
     </Box>

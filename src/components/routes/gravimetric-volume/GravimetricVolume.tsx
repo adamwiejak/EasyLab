@@ -1,4 +1,4 @@
-import ImageButton from "../../primitives/ImageButton";
+import ImageButton from "../../shared/card-button/ImageButton";
 import { vesselsTypeAsset } from "../../../assets/gravimetic-volume";
 import GridContainer from "../../layout/grid-container/GridContainer";
 import { Link, Outlet, useOutlet } from "react-router-dom";
@@ -13,7 +13,7 @@ const GravimetricVolume = () => {
           {vesselsTypeAsset.map(({ header, text, href, imageSrc }) => (
             <Link to={href} key={header}>
               <ImageButton
-                height={250}
+                height={150}
                 text={text}
                 header={header}
                 imageSrc={imageSrc}

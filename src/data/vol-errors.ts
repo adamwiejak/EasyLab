@@ -53,13 +53,25 @@ const glassSinglyPipete: Record<number, VesselErrors> = {
   0.1: { unit: "ml", vol: { "0.10": 0.006 } },
 };
 
+const automaticPipette: Record<number, VesselErrors> = {
+  10000: { unit: "µl", vol: 80, volPercent: 0.8, repPercent: 0.3 },
+  5000: { unit: "µl", vol: 40, volPercent: 0.8, repPercent: 0.3 },
+  2000: { unit: "µl", vol: 16, volPercent: 0.8, repPercent: 0.3 },
+  1000: { unit: "µl", vol: 8, volPercent: 0.8, repPercent: 0.3 },
+  500: { unit: "µl", vol: 4, volPercent: 0.8, repPercent: 0.3 },
+  200: { unit: "µl", vol: 1.6, volPercent: 0.8, repPercent: 0.3 },
+  100: { unit: "µl", vol: 0.8, volPercent: 0.8, repPercent: 0.3 },
+  50: { unit: "µl", vol: 0.5, volPercent: 1, repPercent: 0.4 },
+  20: { unit: "µl", vol: 0.2, volPercent: 1, repPercent: 0.5 },
+};
+
 export const vesselsErrors = {
   cylinders: cylinderErrors,
   volumetric_flask: flaskErrors,
   glass_multi_pipete: glassSinglyPipete,
   glass_singly_pipete: glassMultiPipetesErrors,
+  electric_pipete: automaticPipette,
+  manual_pipete: automaticPipette,
   biurettes: glassSinglyPipete,
-  electric_pipete: glassSinglyPipete,
-  manual_pipete: glassSinglyPipete,
   portionmeter: glassSinglyPipete,
 };

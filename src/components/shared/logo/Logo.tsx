@@ -1,9 +1,12 @@
 import { Toolbar, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Logo = () => {
   return (
     <Toolbar>
-      <Typography>LOGO</Typography>
+      <Link to="/">
+        <Typography>LOGO</Typography>
+      </Link>
     </Toolbar>
   );
 };

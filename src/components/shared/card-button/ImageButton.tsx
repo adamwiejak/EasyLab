@@ -1,10 +1,9 @@
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
+import * as styled from "./styled";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
+import { CardProps } from "@mui/material";
 
-export interface IImageButton {
+export interface IImageButton extends CardProps {
   height?: number | string;
   imageSrc: string;
   text: string;
@@ -16,36 +15,27 @@ const ImageButton: React.FC<IImageButton> = (props) => {
   const { imageSrc, alt, header, text, height, ...rest } = props;
 
   return (
-    <Card
-      sx={{
-        height: "100%",
-        filter: "brightness(0.65)",
-        transition: "all 0.15s ease-in-out",
-        "&:hover": {
-          filter: "brightness(1)",
-        },
-      }}
-      {...rest}
-    >
-      <CardActionArea sx={{ height: "100%" }}>
+    <styled.Card {...rest}>
+      <styled.CardActionArea>
         <CardMedia
-          height={height}
           component="img"
+          height={height}
           image={imageSrc}
+          draggable={false}
           alt={alt || "image"}
         />
 
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+        <styled.CardContent>
+          <Typography gutterBottom variant="h5">
             {header}
           </Typography>
 
           <Typography variant="body2" color="text.secondary">
             {text}
           </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+        </styled.CardContent>
+      </styled.CardActionArea>
+    </styled.Card>
   );
 };
 

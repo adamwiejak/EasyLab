@@ -1,19 +1,24 @@
-import styles from "./styles.module.scss";
-import { Card, CardProps, Typography } from "@mui/material";
+import { Box, BoxProps, Typography } from "@mui/material";
 
-interface IFactors extends CardProps {}
+interface IFactors extends BoxProps {}
 
 const Factors: React.FC<IFactors> = (props) => {
   const { ...rest } = props;
 
   return (
-    <Card {...rest} className={styles["container"]}>
-      <Typography>Typ: Kolba Miarowa</Typography>
-      <Typography>Objętość: 500 ml</Typography>
-      <Typography>Współczynnik Z: 1.0002</Typography>
-      <Typography>Błąd Systematyczny: 69 ml</Typography>
-      <Typography>Błąd Przypadkowy: Nie dotyczy</Typography>
-    </Card>
+    <Box {...rest}>
+      <span>
+        <Typography>
+          Współczynnik Z = <span>1.0002</span>
+        </Typography>
+        <Typography>
+          Błąd Systematyczny = <span>69 ml</span>
+        </Typography>
+        <Typography>
+          Błąd Przypadkowy = <span> Nie dotyczy</span>
+        </Typography>
+      </span>
+    </Box>
   );
 };
 

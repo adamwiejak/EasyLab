@@ -1,11 +1,9 @@
 @use "../../../styles/shared/global-classes.scss";
 
 .root {
-  display: grid;
-  position: relative;
   height: 100vh;
+  display: grid;
   grid-template-rows: min-content 1fr;
-  overflow: hidden;
 }
 
 .content {

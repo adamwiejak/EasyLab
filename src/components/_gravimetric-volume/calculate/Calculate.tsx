@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./styles.module.scss";
-import { Box, Card, Dialog } from "@mui/material";
+import { Card, Dialog } from "@mui/material";
 import ChoseVolume from "../../shared/chose-volume/ChoseVolume";
 import Calculator from "../calculator/Calculator";
 import { useState } from "react";
@@ -9,6 +9,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import Factors from "../../shared/factors/Factors";
 import { Slide } from "@mui/material";
 import type { SlideProps } from "@mui/material";
+import ChoseMatherials from "../chose-material/ChoseMatherial";
 
 const SlideTransitionComponent = React.forwardRef<unknown, SlideProps>(
   (props, ref) => <Slide {...props} ref={ref} direction="up" />
@@ -28,24 +29,30 @@ const Calculate = () => {
 
   return (
     <Dialog
-      fullScreen
       open={open}
+      maxWidth={false}
       onClose={onClose}
       TransitionComponent={SlideTransitionComponent}
     >
-      <Card className={styles["container"]}>
+      <Card className={styles["calculate"]}>
         <ChoseVolume
           elevation={24}
-          sx={{ gridColumn: "1/-1", zIndex: 10 }}
           vesselType={vesselType}
           currVolume={currVolume}
           onChangeVolume={setCurrVolume}
+          className={styles["calculate__header"]}
         />
 
-        <Box className={styles["calculator"]}>
-          <Calculator vesselType={vesselType} currVolume={currVolume} />
-          <Factors elevation={24} />
-        </Box>
+        <Calculator
+          vesselType={vesselType}
+          currVolume={currVolume}
+          className={styles["calculate__main"]}
+        />
+
+        <Card elevation={24} className={styles["calculate__footer"]}>
+          <Factors />
+          <ChoseMatherials />
+        </Card>
       </Card>
     </Dialog>
   );

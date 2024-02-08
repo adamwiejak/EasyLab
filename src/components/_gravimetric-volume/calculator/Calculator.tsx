@@ -1,27 +1,28 @@
-import styles from "./styles.module.scss";
-import { Box, Card, Typography } from "@mui/material";
+import styled from "./styled";
+import { CardProps, IconButton } from "@mui/material";
 import { VesselType } from "../../../types";
-import { vesselsErrors } from "../../../data/vol-errors";
-import Button from "../../primitives/Button";
+import { MinorCrashRounded, PlusOneRounded } from "@mui/icons-material";
 
-interface Calculator {
+interface Calculator extends CardProps {
   vesselType: VesselType;
   currVolume: number | undefined;
 }
 
 const Calculator: React.FC<Calculator> = (props) => {
-  const { currVolume, vesselType } = props;
-
-  const errors = vesselsErrors[vesselType][currVolume || 0];
+  const { currVolume, vesselType, ...rest } = props;
 
   return (
-    <Card className={styles["container"]}>
+    <styled.Container {...rest}>
       <span>
-        <Button text="Dodaj" />
-        <Button text="Dodaj" />
+        <IconButton>
+          <PlusOneRounded />
+        </IconButton>
+
+        <IconButton>
+          <MinorCrashRounded />
+        </IconButton>
       </span>
-      <Typography variant="h6">Calculator</Typography>
-    </Card>
+    </styled.Container>
   );
 };
 
