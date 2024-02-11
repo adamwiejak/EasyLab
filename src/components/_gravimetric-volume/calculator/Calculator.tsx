@@ -1,6 +1,6 @@
 import styled from "./styled";
 import { CardProps, IconButton } from "@mui/material";
-import { VesselType } from "../../../types";
+import { VesselType } from "../../../data/gravimetric-volume/types";
 import { MinorCrashRounded, PlusOneRounded } from "@mui/icons-material";
 
 interface Calculator extends CardProps {

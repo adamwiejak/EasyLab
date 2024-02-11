@@ -1,9 +1,10 @@
-import { createTheme } from "@mui/material/styles";
-import { breakpoints } from "./_breakpoints";
-import { components } from "./_components";
-import { customPalette } from "./_palettes";
-import { spacing } from "./_spacing";
-import { transitions } from "./_transitions";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
+import breakpoints from "./_breakpoints";
+import components from "./_components";
+import customPalette from "./_palettes";
+import spacing from "./_spacing";
+import transitions from "./_transitions";
+import mixins from "./_mixins";
 
 declare module "@mui/material/styles" {
   interface BreakpointOverrides {
@@ -40,11 +41,14 @@ declare module "@mui/material/styles" {
   // }
 }
 
-export const theme = createTheme({
-  // bordering: bordering,
-  spacing: spacing,
-  components: components,
-  breakpoints: breakpoints,
-  transitions: transitions,
-  palette: customPalette["light"],
-});
+export const theme = responsiveFontSizes(
+  createTheme({
+    // bordering: bordering,
+    mixins: mixins,
+    spacing: spacing,
+    components: components,
+    breakpoints: breakpoints,
+    transitions: transitions,
+    palette: customPalette["light"],
+  })
+);

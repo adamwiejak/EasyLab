@@ -1,33 +1,54 @@
-import no_found from "./404.svg";
+import no_found from "./404-error.jpg";
 import back from "./back.png";
 import background from "./background.jpg";
-import glass from "./glass.jpg";
-import pipettes from "./pipetes.jpeg";
-import manual_pipettes from "./manual-pipete.jpg";
-import electrical_pipettes from "./electrical-pipette.jpg";
+import glassAndPlastic from "./glass-and-plastic.jpg";
+import gravimetricVolume from "./gravimetric-volume.jpg";
+import liquidHandling from "./liquid-handling.jpeg";
+import manualPipettes from "./manual-pipete.jpg";
+import electricalPipettes from "./electrical-pipette.jpg";
 import burettes from "./burettes.jpg";
 import portionmeters from "./portionmeters.jpg";
-import flask from "./flasks.jpg";
+import flasks from "./flasks.jpg";
 import cylinders from "./cylinders.jpg";
-import glassPipetes from "./glass-pipetes.jpg";
 import glassPipetesMulti from "./glass-pipete-multi.jpg";
 import glassPipetesSingly from "./glass-pipete-singly.jpg";
 import registration from "./registration.jpeg";
+import flowAnalizer from "./flow-analizer.jpg";
+
+export default {
+  no_found,
+  back,
+  background,
+  gravimetricVolume,
+  liquidHandling,
+  glassAndPlastic,
+  flasks,
+  cylinders,
+  burettes,
+  portionmeters,
+  glassPipetesMulti,
+  glassPipetesSingly,
+  manualPipettes,
+  electricalPipettes,
+  registration,
+  flowAnalizer,
+};
 
 export {
   no_found,
   back,
   background,
-  glass,
-  pipettes,
-  flask,
+  gravimetricVolume,
+  liquidHandling,
+  glassAndPlastic,
+  flasks,
   cylinders,
   burettes,
-  glassPipetes,
   portionmeters,
-  manual_pipettes,
   glassPipetesMulti,
   glassPipetesSingly,
-  electrical_pipettes,
+  manualPipettes,
+  electricalPipettes,
   registration,
+  flowAnalizer,
 };

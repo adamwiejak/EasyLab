@@ -1,8 +1,0 @@
-@use "../../../styles/shared/global-classes.scss";
-
-.container {
-  @extend .box--column;
-  grid-template-columns: repeat(2, 1fr);
-  place-items: center;
-  place-content: center;
-}

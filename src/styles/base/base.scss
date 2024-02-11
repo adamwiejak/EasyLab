@@ -8,13 +8,17 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  html {
-    font-size: 22.5%;
-  }
-
   body {
     min-height: 100vh;
     background-color: var(--color-dark-1);
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      display: none;
+    }
 
     #root {
       min-height: 100vh;

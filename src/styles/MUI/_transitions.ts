@@ -1,4 +1,6 @@
-export const transitions = {
+import { TransitionsOptions } from "@mui/material";
+
+const transitions: TransitionsOptions = {
   duration: {
     shortest: 100,
     shorter: 180,
@@ -17,3 +19,5 @@ export const transitions = {
     sharp: "cubic-bezier(0.4, 0, 0.6, 1)",
   },
 };
+
+export default transitions;

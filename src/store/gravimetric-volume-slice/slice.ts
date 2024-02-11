@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import * as matherials from "../../data/matherials";
+import * as matherials from "../../data/gravimetric-volume/matherials";
 
 const initialState = {
   massStandardDensity: {

@@ -1,7 +1,8 @@
-import ImageButton from "../../shared/card-button/ImageButton";
-import { vesselsTypeAsset } from "../../../assets/gravimetic-volume";
 import GridContainer from "../../layout/grid-container/GridContainer";
 import { Link, Outlet, useOutlet } from "react-router-dom";
+import { vesselsTypesAsset } from "./config";
+import MediaCard from "../../shared/media-card/MediaCard";
+import BackMediaCard from "../../primitives/BackMediaCard";
 
 const GravimetricVolume = () => {
   const outlet = useOutlet();
@@ -9,11 +10,13 @@ const GravimetricVolume = () => {
   return (
     <>
       {!outlet && (
-        <GridContainer backBtn={{ text: "Cofnij Do Listy Badań" }}>
-          {vesselsTypeAsset.map(({ header, text, href, imageSrc }) => (
+        <GridContainer>
+          <BackMediaCard text="Wróć Do Aktulalności" height={250} />
+
+          {vesselsTypesAsset.map(({ header, text, href, imageSrc }) => (
             <Link to={href} key={header}>
-              <ImageButton
-                height={150}
+              <MediaCard
+                height={250}
                 text={text}
                 header={header}
                 imageSrc={imageSrc}

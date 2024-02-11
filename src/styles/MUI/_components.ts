@@ -1,6 +1,6 @@
 import { ThemeOptions } from "@mui/material/styles";
 
-export const components: ThemeOptions["components"] = {
+const components: ThemeOptions["components"] = {
   MuiButton: {
     defaultProps: {
       variant: "contained",
@@ -33,3 +33,5 @@ export const components: ThemeOptions["components"] = {
     },
   },
 };
+
+export default components;

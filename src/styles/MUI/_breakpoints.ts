@@ -1,6 +1,6 @@
-import type { ThemeOptions } from "@mui/material/styles";
+import type { BreakpointsOptions } from "@mui/material/styles";
 
-export const breakpoints: ThemeOptions["breakpoints"] = {
+const breakpoints: BreakpointsOptions = {
   values: {
     xs: 0,
     sm: 600,
@@ -9,3 +9,5 @@ export const breakpoints: ThemeOptions["breakpoints"] = {
     xl: 1536,
   },
 };
+
+export default breakpoints;

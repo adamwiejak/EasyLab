@@ -1,20 +1,28 @@
-import styles from "./styles.module.scss";
+import styled from "./styled";
 import { Outlet } from "react-router-dom";
 import AppBar from "../../layout/app-bar/AppBar";
-import { Box, Container } from "@mui/material";
 import Background from "../../shared/background-image/Background";
 import { background } from "../../../assets/images/_images";
+import Sidebar from "../../layout/side-bar/Sidebar";
 
 const Root: React.FC = () => {
   return (
-    <Box className={styles["root"]}>
-      <AppBar position="static" />
-      <Background src={background} />
+    <styled.Wrapper>
+      <styled.Header>
+        <AppBar position="static" />
+      </styled.Header>
 
-      <Container className={styles["content"]}>
+      <styled.Sidebar>
+        <Sidebar />{" "}
+      </styled.Sidebar>
+
+      <styled.Main>
         <Outlet />
-      </Container>
-    </Box>
+        <Background src={background} />
+      </styled.Main>
+
+      {/* <Footer /> */}
+    </styled.Wrapper>
   );
 };
 

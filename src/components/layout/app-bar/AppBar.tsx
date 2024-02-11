@@ -1,15 +1,16 @@
-import styles from "./styles.module.scss";
-import { AppBar as MUIAppBar, AppBarProps } from "@mui/material";
-import NavBar from "../../shared/nav-bar/NavBar";
+import styled from "./styled";
+import type { AppBarProps } from "@mui/material";
 import Logo from "../../shared/logo/Logo";
+import NavBar from "../../shared/nav-bar/NavBar";
+import MobileDrawer from "../mobile-drawer/MobileDrawer";
 
 const AppBar: React.FC<AppBarProps> = (props) => {
   return (
-    <MUIAppBar {...props} className={styles["nav-bar"]}>
+    <styled.Bar {...props}>
       <Logo />
-
       <NavBar />
-    </MUIAppBar>
+      <MobileDrawer />
+    </styled.Bar>
   );
 };
 

@@ -1,12 +1,12 @@
 import type { PaletteOptions } from "@mui/material/styles";
 
-const common = {
+export const common = {
   facebook: "#1197F5",
   google: "#DB4437",
   unactive: "#808080",
 };
 
-const _paletteLight: PaletteOptions = {
+export const paletteLight: PaletteOptions = {
   common,
   mode: "light",
   // primary: {
@@ -24,7 +24,7 @@ const _paletteLight: PaletteOptions = {
   // background: { default: "#ffffff", paper: "#efefef" },
 };
 
-const _paletteDark: PaletteOptions = {
+export const paletteDark: PaletteOptions = {
   common,
   mode: "dark",
   // primary: {
@@ -35,7 +35,7 @@ const _paletteDark: PaletteOptions = {
   // },
 };
 
-export const customPalette = {
-  light: _paletteLight,
-  dark: _paletteDark,
+export default {
+  light: paletteLight,
+  dark: paletteDark,
 };
