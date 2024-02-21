@@ -6,11 +6,11 @@ import CardContentMUI from "@mui/material/CardContent";
 export const Container = styled(Card)`
   height: 100%;
   width: 100%;
-  filter: brightness(0.7);
   transition: all 0.2s ease-in-out;
+  filter: brightness(0.7) grayscale(0.6);
 
   &:hover {
-    filter: brightness(1);
+    filter: brightness(1) grayscale(0);
   }
 `;
 
@@ -27,7 +27,7 @@ export const ActionArea = styled(CardActionArea)`
   grid-template-rows: 1fr min-content;
 
   img {
-    filter: brightness(0.8) blur(1px);
+    filter: brightness(0.6) blur(1px);
   }
 
   &:hover img {

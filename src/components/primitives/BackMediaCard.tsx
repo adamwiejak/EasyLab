@@ -1,20 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { back } from "../../assets/images/_images";
 import MediaCard, { IMediaCard } from "../shared/media-card/MediaCard";
+import { getImage } from "../../assets/images/_images";
+import { Link } from "react-router-dom";
 
 interface IBackMediaCard
-  extends Omit<IMediaCard, "header" | "imageSrc" | "alt"> {}
+  extends Omit<IMediaCard, "header" | "imageSrc" | "alt" | "href"> {}
 
 const BackMediaCard: React.FC<IBackMediaCard> = (props) => {
+  const { ...rest } = props;
+
   return (
-    <Link to="../">
-      <MediaCard
-        imageSrc={back}
-        header="Wstecz"
-        alt="Back Button Image"
-        {...props}
-      />
+    <Link to="../" relative="path">
+      <MediaCard {...rest} header="Wstecz" imageSrc={getImage("back")} />;
     </Link>
   );
 };

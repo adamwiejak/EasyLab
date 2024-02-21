@@ -3,7 +3,7 @@ import type { PaletteOptions } from "@mui/material/styles";
 export const common = {
   facebook: "#1197F5",
   google: "#DB4437",
-  unactive: "#808080",
+  unactive: "#4a4a4a",
 };
 
 export const paletteLight: PaletteOptions = {

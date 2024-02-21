@@ -1,19 +1,20 @@
-import ScrollTop from "../../shared/scroll-top/ScrollTop";
-import styled from "./styled";
+import React from "react";
+import styled, { StyledProps } from "./styled";
 
-interface GridContainerProps {
+interface GridContainerProps extends StyledProps {
   children?: React.ReactNode;
 }
 
-const GridContainer: React.FC<GridContainerProps> = (props) => {
-  const { children, ...rest } = props;
+const GridContainer = React.forwardRef<any, GridContainerProps>(
+  (props, ref) => {
+    const { children, ...rest } = props;
 
-  return (
-    <styled.Container {...rest}>
-      {children}
-      <ScrollTop />
-    </styled.Container>
-  );
-};
+    return (
+      <styled.Container ref={ref} {...rest}>
+        {children}
+      </styled.Container>
+    );
+  }
+);
 
 export default GridContainer;

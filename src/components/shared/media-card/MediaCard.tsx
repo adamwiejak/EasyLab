@@ -4,22 +4,22 @@ import Typography from "@mui/material/Typography";
 import type { CardProps } from "@mui/material";
 
 export interface IMediaCard extends CardProps {
-  height: number | string;
-  imageSrc: string;
-  text: string;
-  header: string;
+  title?: string;
   alt?: string;
+  header: string;
+  imageSrc: string;
+  height?: number | string;
 }
 
 const MediaCard: React.FC<IMediaCard> = (props) => {
-  const { imageSrc, alt, header, text, height, ...rest } = props;
+  const { imageSrc, alt, header, title, height, ...rest } = props;
 
   return (
     <styled.Container {...rest}>
       <styled.ActionArea>
         <CardMedia
           component="img"
-          height={height}
+          height={height || 230}
           image={imageSrc}
           draggable={false}
           alt={alt || "image"}
@@ -29,7 +29,7 @@ const MediaCard: React.FC<IMediaCard> = (props) => {
           <Typography variant="h5">{header}</Typography>
 
           <Typography variant="body2" color="text.secondary">
-            {text}
+            {title}
           </Typography>
         </styled.CardContent>
       </styled.ActionArea>

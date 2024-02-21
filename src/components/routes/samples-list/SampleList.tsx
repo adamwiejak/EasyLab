@@ -1,7 +1,7 @@
 import { DataGrid } from "@mui/x-data-grid";
 import { columns, initialState } from "./config";
 import { Card } from "@mui/material";
-import { DUMMY_SAMPLES_LIST } from "../../../data/samples-list/samples-lsit";
+import { DUMMY_SAMPLES_LIST } from "../../../data/samples-list/dummy-samples-list";
 
 export default function DataGridDemo() {
   return (

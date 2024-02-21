@@ -7,29 +7,11 @@ const components: ThemeOptions["components"] = {
     },
   },
 
-  MuiSelect: {
-    defaultProps: { variant: "standard" },
-  },
-
-  MuiFormGroup: {
+  MuiDrawer: {
     styleOverrides: {
       root: {
-        justifyContent: "space-around",
+        backdropFilter: "blur(5px) brightness(0.7)",
       },
-    },
-  },
-
-  MuiFormLabel: {
-    styleOverrides: {
-      root: {
-        textAlign: "start",
-      },
-    },
-  },
-
-  MuiTextField: {
-    defaultProps: {
-      // variant: "filled",
     },
   },
 };

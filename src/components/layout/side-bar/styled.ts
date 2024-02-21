@@ -1,21 +1,27 @@
 import styled from "@mui/material/styles/styled";
-import { Card, List } from "@mui/material";
+import { Box, Card } from "@mui/material";
 
 const Container = styled(Card)`
-  /* height: 100%;
-  display: grid;
-  grid-auto-rows: min-content; */
-
   min-width: 20vw;
+  height: 100%;
   display: flex;
   flex-direction: column;
 `;
 
-const Main = styled(List)`
-  height: 100%;
-  overflow-y: auto;
+const Header = styled(Card)`
+  display: grid;
+  place-content: center;
 `;
 
-const Footer = styled(List)``;
+const Main = styled(Box)`
+  height: 100%;
+  overflow-y: hidden;
+`;
 
-export default { Container, Main, Footer };
+const Footer = styled(Card)`
+  height: min-content;
+  overflow: visible;
+  direction: rtl;
+`;
+
+export default { Container, Header, Main, Footer };

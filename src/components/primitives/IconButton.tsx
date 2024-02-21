@@ -1,15 +1,23 @@
-import IconButtonMUI, { type IconButtonProps } from "@mui/material/IconButton";
 import React from "react";
-import { IconName, getIcon } from "../../assets/icons/_icons";
+import Tooltip from "@mui/material/Tooltip";
+import MUIIconButton from "@mui/material/IconButton";
+import type { IconButtonProps } from "@mui/material";
+import type { Icon } from "../../assets/icons/_icons";
 
 interface IIconButton extends IconButtonProps {
-  iconName: IconName;
+  tip?: string;
+  icon: Icon;
 }
 
 const IconButton: React.FC<IIconButton> = (props) => {
-  const { iconName, ...rest } = props;
+  const { tip, icon, size, ...rest } = props;
 
-  return <IconButtonMUI {...rest}>{getIcon(iconName)}</IconButtonMUI>;
+  // TODO: icon and button coors/size
+  return (
+    <Tooltip title={tip} enterDelay={350} enterNextDelay={320} arrow>
+      <MUIIconButton {...rest}>{icon}</MUIIconButton>
+    </Tooltip>
+  );
 };
 
 export default IconButton;

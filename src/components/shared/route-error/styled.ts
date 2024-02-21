@@ -5,6 +5,7 @@ import Card from "@mui/material/Card";
 
 export const Container = styled(Card)`
   display: grid;
+  place-self: center;
   padding: ${({ theme: { spacing } }) => spacing(5, 3, 1, 3)};
   gap: ${({ theme: { spacing } }) => spacing(5)};
   min-width: 45vw;

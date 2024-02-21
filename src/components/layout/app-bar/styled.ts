@@ -4,7 +4,7 @@ import AppBar from "@mui/material/AppBar";
 const Bar = styled(AppBar)`
   display: grid;
   grid-auto-flow: column;
-  justify-content: right;
+  justify-content: space-between;
 `;
 
 export default {

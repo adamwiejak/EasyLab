@@ -2,8 +2,8 @@ import styled from "./styled";
 import { SwipeableDrawerProps } from "@mui/material";
 import { useState } from "react";
 import Sidebar from "../side-bar/Sidebar";
-// import icons from "../../../assets/icons/_icons";
-// import IconButton from "../../primitives/IconButton";
+import IconButton from "../../primitives/IconButton";
+import Icon from "../../primitives/Icon";
 
 interface IDrawer
   extends Omit<SwipeableDrawerProps, "open" | "onClose" | "onOpen"> {}
@@ -14,14 +14,16 @@ const MobileDrawer: React.FC<IDrawer> = (props) => {
 
   return (
     <>
-      {/* <IconButton onClick={toggleDrawer} icon={icons.BurgerIcon} /> */}
+      <IconButton
+        onClick={toggleDrawer}
+        icon={<Icon iconName="burger" color="inherit" />}
+      />
 
       <styled.Drawer
         {...props}
         open={drawerOpen}
         onClose={toggleDrawer}
         onOpen={toggleDrawer}
-        onClick={toggleDrawer}
       >
         <Sidebar sx={{ flexGrow: 1 }} />
       </styled.Drawer>

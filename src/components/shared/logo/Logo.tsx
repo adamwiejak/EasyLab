@@ -1,13 +1,16 @@
-import { Toolbar, ToolbarProps, Typography } from "@mui/material";
+import styled from "./styled";
+import { BoxProps, Typography } from "@mui/material";
 import BiotechIcon from "@mui/icons-material/Biotech";
 import { Link } from "react-router-dom";
 
-const Logo: React.FC<ToolbarProps> = (props) => {
+interface ILogo extends BoxProps {}
+
+const Logo: React.FC<ILogo> = (props) => {
   return (
-    <Toolbar {...props}>
+    <styled.Wrapper {...props}>
       <BiotechIcon fontSize="large" sx={{ mx: 3 }} />
 
-      <Link to="/">
+      <Link to="/home">
         <Typography
           variant="h5"
           noWrap
@@ -21,7 +24,7 @@ const Logo: React.FC<ToolbarProps> = (props) => {
           EASY-LAB
         </Typography>
       </Link>
-    </Toolbar>
+    </styled.Wrapper>
   );
 };
 

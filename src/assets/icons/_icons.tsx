@@ -1,19 +1,34 @@
-import Settings from "@mui/icons-material/Settings";
-import ContentPasteSearch from "@mui/icons-material/ContentPasteSearch";
-import Science from "@mui/icons-material/Science";
-import Person4 from "@mui/icons-material/Person4";
+import Settings from "@mui/icons-material/SettingsTwoTone";
+import ContentPasteSearch from "@mui/icons-material/ContentPasteSearchTwoTone";
+import Science from "@mui/icons-material/ScienceTwoTone";
+import Person4 from "@mui/icons-material/Person4TwoTone";
 import MenuTwoTone from "@mui/icons-material/MenuTwoTone";
+import AdminPanelSettings from "@mui/icons-material/AdminPanelSettingsTwoTone";
+import NootebookIcon from "@mui/icons-material/DescriptionTwoTone";
+import CalculateIcon from "@mui/icons-material/CalculateTwoTone";
+import ArrowBackIcon from "@mui/icons-material/ReplyAllTwoTone";
+import SearchIcon from "@mui/icons-material/SearchTwoTone";
+import HomeIcon from "@mui/icons-material/HomeTwoTone";
+import InsertDriveFileTwoToneIcon from "@mui/icons-material/InsertDriveFileTwoTone";
 
 export type Icon = JSX.Element;
 export type IconName = keyof typeof icons;
 
 const icons = {
-  FilesIcon: <ContentPasteSearch />,
-  SettingsIcon: <Settings />,
-  ScienceIcon: <Science />,
-  UserIcon: <Person4 />,
-  BurgerIcon: <MenuTwoTone />,
-  DupaIcon: <MenuTwoTone />,
+  home: HomeIcon,
+  files: InsertDriveFileTwoToneIcon,
+  searchFiles: ContentPasteSearch,
+  settings: Settings,
+  science: Science,
+  user: Person4,
+  burger: MenuTwoTone,
+  adminPanel: AdminPanelSettings,
+  nootebook: NootebookIcon,
+  calculate: CalculateIcon,
+  arrowBack: ArrowBackIcon,
+  search: SearchIcon,
 };
 
 export const getIcon = (name: IconName) => icons[name];
+
+export default icons;

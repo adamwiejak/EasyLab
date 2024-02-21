@@ -1,11 +1,19 @@
-import { getIcon } from "../../../assets/icons/_icons";
-
-export const sidebarFooterButtons: IListItemButton[] = [
+export const sidebarFooterButtons: INavButtonAsseet[] = [
   {
-    icon: getIcon("FilesIcon"),
-    text: "Rejestr Próbek",
-    href: "samples_list",
+    href: "/home",
+    icon: "home",
+    text: "Strona główna",
   },
-  { icon: getIcon("UserIcon"), text: "Analitycy", href: "users" },
-  { icon: getIcon("SettingsIcon"), text: "Ustawienia", href: "settings" },
+
+  {
+    icon: "searchFiles",
+    href: "samples_list",
+    text: "Rejestr Próbek",
+  },
+
+  {
+    href: "admin",
+    icon: "adminPanel",
+    text: "Panel Administratora",
+  },
 ];

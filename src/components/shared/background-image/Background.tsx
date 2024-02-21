@@ -1,4 +1,4 @@
-import React from "react";
+import { useRef } from "react";
 import styled from "./styled";
 
 interface BackgroundImageProps {
@@ -8,9 +8,14 @@ interface BackgroundImageProps {
 
 const Background: React.FC<BackgroundImageProps> = (props) => {
   const { src, alt } = props;
+  const contianerRef = useRef<HTMLElement>(null!);
+
+  // useEffect(() => {
+  //   openTween(contianerRef);
+  // }, []);
 
   return (
-    <styled.Wrapper>
+    <styled.Wrapper ref={contianerRef}>
       <img src={src} alt={alt || "backrgound image"} />
     </styled.Wrapper>
   );
