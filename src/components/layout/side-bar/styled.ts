@@ -2,7 +2,6 @@ import styled from "@mui/material/styles/styled";
 import { Box, Card } from "@mui/material";
 
 const Container = styled(Card)`
-  min-width: 20vw;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -18,7 +17,7 @@ const Main = styled(Box)`
   overflow-y: hidden;
 `;
 
-const Footer = styled(Card)`
+const Footer = styled(Box)`
   height: min-content;
   overflow: visible;
   direction: rtl;

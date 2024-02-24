@@ -1,18 +1,10 @@
-import { Box, Card, styled } from "@mui/material";
-import GridContainer from "../../layout/grid-container/GridContainer";
+import { Box, styled } from "@mui/material";
 
 const Wrapper = styled(Box)`
+  max-height: 100%;
+  overflow: hidden;
   display: grid;
-  height: 100%;
   grid-template-rows: min-content 1fr;
 `;
 
-const Header = styled(Card)`
-  display: flex;
-  place-content: end;
-  align-items: center;
-`;
-
-const Content = styled(GridContainer)``;
-
-export default { Wrapper, Header, Content };
+export default { Wrapper };

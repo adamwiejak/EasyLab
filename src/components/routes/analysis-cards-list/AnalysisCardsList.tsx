@@ -1,4 +1,4 @@
-import { analysisListAsset } from "../../../data/analysis/assets";
+import { analysisAssets } from "../../../assets/components/analysis-components";
 import Button from "../../primitives/Button";
 import { Link } from "react-router-dom";
 import GridContainer from "../../layout/grid-container/GridContainer";
@@ -6,9 +6,9 @@ import GridContainer from "../../layout/grid-container/GridContainer";
 const AnalysisCardsList = () => {
   return (
     <GridContainer>
-      {analysisListAsset.map(({ name }) => (
-        <Link to={name} key={name}>
-          <Button text={name} color="success" />
+      {Object.keys(analysisAssets).map((key) => (
+        <Link to={key} key={key}>
+          <Button text={key} color="success" />
         </Link>
       ))}
     </GridContainer>

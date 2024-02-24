@@ -6,7 +6,7 @@ import Background from "../../shared/background-image/Background";
 const NoPage = () => {
   return (
     <styled.Page>
-      <RouteError sx={{ position: "absolute", zIndex: 2 }} />
+      <RouteError sx={{ placeSelf: "center", zIndex: 2 }} />
       <Background src={getImage("no_found")} />
     </styled.Page>
   );

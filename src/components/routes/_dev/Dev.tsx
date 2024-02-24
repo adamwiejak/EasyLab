@@ -1,6 +1,7 @@
-import { Tooltip, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import icons, { IconName } from "../../../assets/icons/_icons";
 import IconButton from "../../primitives/IconButton";
+import Icon from "../../primitives/Icon";
 
 const DevPage = () => {
   const iconsName = Object.keys(icons) as IconName[];
@@ -9,11 +10,12 @@ const DevPage = () => {
     <div>
       <Typography variant="h4">Icons (Hover to get iconName prop)</Typography>
       {iconsName.map((icon) => (
-        <Tooltip title={icon} key={icon}>
-          <span>
-            <IconButton size="large" iconName={icon} />
-          </span>
-        </Tooltip>
+        <IconButton
+          key={icon}
+          tip={icon}
+          size="large"
+          icon={<Icon iconName={icon} />}
+        />
       ))}
     </div>
   );

@@ -1,40 +1,27 @@
 import styled from "./styled";
 import { getImage } from "../../../assets/images/_images";
-import { LoaderFunctionArgs, Outlet } from "react-router-dom";
+import { LoaderFunctionArgs, useSearchParams } from "react-router-dom";
 import Background from "../../shared/background-image/Background";
-
-import { Box, Tab, Tabs } from "@mui/material";
+import AnalysisHomeHeader from "../../shared/analyisi-home-header/AnalysisHomeHeader";
+import { analysisAssets } from "../../../assets/components/analysis-components";
+import { useDataFromLoader } from "../../../helpers/functions";
 
 export const loader = (props: LoaderFunctionArgs) => {
-  return { analysis: props.params.analysis };
+  const analysis = props.params.analysis as AnalysisName;
+  const analisisAsset = analysisAssets[analysis];
+  return { ...analisisAsset };
 };
 
 const AnalysisHome = () => {
-  const handleChange = (e) => {
-    console.log(e.target.value);
-  };
+  const { tabs } = useDataFromLoader<AnalysisAsset>();
+  const [searchParams] = useSearchParams();
+  const activeTab = tabs.find((tab) => tab.param === searchParams.get("tab"));
 
   return (
     <styled.Wrapper>
-      <styled.Header>
-        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-          <Tabs value="calculate" aria-label="basic tabs example">
-            <Tab
-              value="calculate"
-              label="Kalkulatory"
-              onChange={handleChange}
-            />
+      <AnalysisHomeHeader tabs={tabs} />
 
-            <Tab
-              value="notebooks"
-              label="Zeszyty Robocze"
-              onChange={handleChange}
-            />
-          </Tabs>
-        </Box>
-      </styled.Header>
-
-      <Outlet />
+      {activeTab?.component}
 
       <Background src={getImage("background")} />
     </styled.Wrapper>

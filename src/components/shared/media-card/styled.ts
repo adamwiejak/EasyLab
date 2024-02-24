@@ -7,7 +7,7 @@ export const Container = styled(Card)`
   height: 100%;
   width: 100%;
   transition: all 0.2s ease-in-out;
-  filter: brightness(0.7) grayscale(0.6);
+  filter: brightness(0.6) grayscale(0.6);
 
   &:hover {
     filter: brightness(1) grayscale(0);
@@ -27,11 +27,11 @@ export const ActionArea = styled(CardActionArea)`
   grid-template-rows: 1fr min-content;
 
   img {
-    filter: brightness(0.6) blur(1px);
+    filter: grayscale(0.5) blur(1px);
   }
 
   &:hover img {
-    filter: blur(0);
+    filter: grayscale(0) blur(0);
   }
 `;
 

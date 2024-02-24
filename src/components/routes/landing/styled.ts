@@ -10,6 +10,7 @@ const Wrapper = styled(Box)<StyledProps>`
   grid-auto-rows: min-content;
   gap: ${({ theme: { spacing } }) => spacing(2)};
   height: 100%;
+  overflow-y: auto;
 `;
 
 const Header = styled(GridContainer)<StyledProps>`

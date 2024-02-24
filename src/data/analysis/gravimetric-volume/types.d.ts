@@ -1,5 +1,4 @@
-import { IMediaCard } from "../../../components/shared/media-card/MediaCard";
-import { vesselsErrors } from "./volume-errors";
+import { vesselsErrors } from "./errors";
 
 export type Volume = number;
 export type VolumeUnit = "ml" | "µl";

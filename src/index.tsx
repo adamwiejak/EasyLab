@@ -1,10 +1,9 @@
+import router from "./router";
 import gsap from "gsap";
 import "./main.scss";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
-
-import router from "./router";
 import { Provider } from "react-redux";
 import store from "./store/Store";
 import { ThemeProvider } from "@mui/material";

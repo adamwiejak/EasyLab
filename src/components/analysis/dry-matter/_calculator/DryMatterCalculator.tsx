@@ -1,13 +1,7 @@
-import { Typography } from "@mui/material";
-import BackMediaCard from "../../../primitives/BackMediaCard";
+import PlaceHolder from "../../../_dev/PlaceHolder";
 
 const DryMatterCalculator = () => {
-  return (
-    <div>
-      <BackMediaCard height={250} />
-      <Typography>CalculateDryMatter</Typography>?
-    </div>
-  );
+  return <PlaceHolder text="Dry Matter Calculator" />;
 };
 
 export default DryMatterCalculator;

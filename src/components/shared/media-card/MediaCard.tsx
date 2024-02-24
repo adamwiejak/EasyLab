@@ -19,7 +19,7 @@ const MediaCard: React.FC<IMediaCard> = (props) => {
       <styled.ActionArea>
         <CardMedia
           component="img"
-          height={height || 230}
+          height={height || 250}
           image={imageSrc}
           draggable={false}
           alt={alt || "image"}

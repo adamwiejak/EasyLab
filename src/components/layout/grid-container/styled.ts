@@ -8,19 +8,14 @@ export interface StyledProps extends BoxProps {
 const shouldForwardProp = excludeStyledProps(["cellSize"]);
 
 const Container = styled(Box, { shouldForwardProp })<StyledProps>`
-  width: 100%;
-  place-self: start;
-  place-content: start;
+  height: 100%;
   display: grid;
-  transform-origin: left top;
-  grid-auto-rows: min-content;
-  transition: all 0.15s ease-in-out;
+  overflow-y: auto;
+  place-content: start;
   gap: ${({ theme: { spacing } }) => spacing(2)};
+  padding: ${({ theme: { spacing } }) => spacing(2)};
 
   grid-template-columns: ${({ cellSize }) =>
-    `repeat(auto-fill, minmax(${cellSize || "17rem"}, 1fr))`};
-
-  grid-template-rows: ${({ cellSize }) =>
     `repeat(auto-fill, minmax(${cellSize || "17rem"}, 1fr))`};
 `;
 

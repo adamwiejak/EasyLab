@@ -24,6 +24,7 @@ const MobileDrawer: React.FC<IDrawer> = (props) => {
         open={drawerOpen}
         onClose={toggleDrawer}
         onOpen={toggleDrawer}
+        onClick={toggleDrawer}
       >
         <Sidebar sx={{ flexGrow: 1 }} />
       </styled.Drawer>

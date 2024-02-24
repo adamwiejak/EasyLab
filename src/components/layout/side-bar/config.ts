@@ -1,19 +1,19 @@
-export const sidebarFooterButtons: INavButtonAsseet[] = [
+export const sidebarFooterButtons: NavButtonAsset[] = [
   {
     href: "/home",
     icon: "home",
-    text: "Strona główna",
+    title: "Strona główna",
   },
 
   {
-    icon: "searchFiles",
-    href: "samples_list",
-    text: "Rejestr Próbek",
+    icon: "file",
+    href: "examination_cards",
+    title: "Karty Badań",
   },
 
   {
     href: "admin",
     icon: "adminPanel",
-    text: "Panel Administratora",
+    title: "Panel Administratora",
   },
 ];

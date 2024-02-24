@@ -1,17 +1,17 @@
 import styled from "./styled";
 import Logo from "../../shared/logo/Logo";
-import { sidebarFooterButtons } from "./config";
-import AnalisisList from "../../shared/analisis-list/AnalisisList";
+import AnalisisList from "../../shared/analysis-list/AnalisisList";
 import { CardProps } from "@mui/material";
 import NavButton from "../../primitives/NavButton";
 import Icon from "../../primitives/Icon";
 import { useLocation } from "react-router-dom";
+import { sidebarFooterButtons } from "./config";
 
 const Sidebar: React.FC<CardProps> = (props) => {
   const { pathname } = useLocation();
 
   return (
-    <styled.Container raised elevation={10} {...props}>
+    <styled.Container {...props} variant="outlined" raised={false}>
       <styled.Header raised elevation={10}>
         <Logo />
       </styled.Header>
@@ -20,12 +20,12 @@ const Sidebar: React.FC<CardProps> = (props) => {
         <AnalisisList />
       </styled.Main>
 
-      <styled.Footer variant="outlined">
-        {sidebarFooterButtons.map(({ icon, href, text }) => (
+      <styled.Footer>
+        {sidebarFooterButtons.map(({ icon, href, title }) => (
           <NavButton
-            key={text}
-            text={text}
+            key={href}
             href={href}
+            text={title}
             selected={pathname.includes(href)}
             icon={
               <Icon

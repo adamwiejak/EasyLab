@@ -10,13 +10,14 @@ import ArrowBackIcon from "@mui/icons-material/ReplyAllTwoTone";
 import SearchIcon from "@mui/icons-material/SearchTwoTone";
 import HomeIcon from "@mui/icons-material/HomeTwoTone";
 import InsertDriveFileTwoToneIcon from "@mui/icons-material/InsertDriveFileTwoTone";
+import FolderCopyIcon from "@mui/icons-material/FolderCopyTwoTone";
 
 export type Icon = JSX.Element;
 export type IconName = keyof typeof icons;
 
 const icons = {
   home: HomeIcon,
-  files: InsertDriveFileTwoToneIcon,
+  file: InsertDriveFileTwoToneIcon,
   searchFiles: ContentPasteSearch,
   settings: Settings,
   science: Science,
@@ -27,6 +28,7 @@ const icons = {
   calculate: CalculateIcon,
   arrowBack: ArrowBackIcon,
   search: SearchIcon,
+  folder: FolderCopyIcon,
 };
 
 export const getIcon = (name: IconName) => icons[name];

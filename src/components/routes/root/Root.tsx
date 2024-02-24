@@ -2,17 +2,16 @@ import styled from "./styled";
 import { Outlet } from "react-router-dom";
 import AppBar from "../../layout/app-bar/AppBar";
 import Sidebar from "../../layout/side-bar/Sidebar";
+import { useMediaQuery } from "@mui/material";
 
 const Root: React.FC = () => {
+  const decktop = useMediaQuery("(min-width:768px)");
+
   return (
     <styled.Wrapper>
-      <styled.Header>
-        <AppBar position="static" />
-      </styled.Header>
+      <AppBar sx={{ gridArea: "header" }} />
 
-      <styled.Sidebar>
-        <Sidebar />
-      </styled.Sidebar>
+      {decktop && <Sidebar sx={{ gridArea: "sidebar" }} />}
 
       <styled.Main>
         <Outlet />

@@ -1,9 +1,9 @@
 import { DataGrid } from "@mui/x-data-grid";
 import { columns, initialState } from "./config";
 import { Card } from "@mui/material";
-import { DUMMY_SAMPLES_LIST } from "../../../data/samples-list/dummy-samples-list";
+import { DUMMY_SAMPLES_LIST } from "../../../data/_DUMMY_DATA/dummy-samples-list";
 
-export default function DataGridDemo() {
+const ExaminationCards = () => {
   return (
     <Card sx={{ height: "100%", width: "100%" }}>
       <DataGrid
@@ -16,4 +16,6 @@ export default function DataGridDemo() {
       />
     </Card>
   );
-}
+};
+
+export default ExaminationCards;
